@@ -8,15 +8,24 @@
     </section>
     <section class="cardHome">
       <div class="card-item">
+        <img src="../assets/IMG/icons8-install-64.png" alt="">
         <h2>Serviço 1</h2>
+        <p>Descrição do serviço 1.</p>
+        <p>Descrição do serviço 1.</p>
         <p>Descrição do serviço 1.</p>
       </div>
       <div class="card-item">
+        <img src="../assets/IMG/icons8-install-64.png" alt="">
         <h2>Serviço 2</h2>
+        <p>Descrição do serviço 2.</p>
+        <p>Descrição do serviço 2.</p>
         <p>Descrição do serviço 2.</p>
       </div>
       <div class="card-item">
+        <img src="../assets/IMG/icons8-install-64.png" alt="">
         <h2>Serviço 3</h2>
+        <p>Descrição do serviço 3.</p>
+        <p>Descrição do serviço 3.</p>
         <p>Descrição do serviço 3.</p>
       </div>
     </section>
@@ -31,12 +40,14 @@ export default {
 
 <style>
 .hero {
-  margin-top: 5rem;
+  margin-top: 7rem;
   font-size: 18px;
   background-image: url('/caminho/para/o/seu/arquivo.svg');
   background-size: cover;
   background-position: center;
   padding: 5rem 0;
+  
+
 }
 
 .main-content {
@@ -59,8 +70,11 @@ export default {
   background-position: center; /* Centraliza o background na seção */
   padding: 100px 0; /* Espaçamento interno superior e inferior da seção */
 }
-
 .card-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: calc(100% / 4); /* Cada serviço ocupará 1/3 do espaço */
   height: 15rem;
   padding: 1rem;
@@ -71,9 +85,12 @@ export default {
   -webkit-backdrop-filter: blur( 2.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 1;
+  cursor: pointer;
 
 }
-.card-item1{
+
+.card-item{
   color: #666;
 }
 .card-item h2 {
@@ -84,9 +101,10 @@ export default {
   color: #666;
 }
 
-@media screen and (max-width: 568px) {
+/* Estilos para telas pequenas (celulares em modo paisagem e menor) */
+@media screen and (max-width: 576px) {
   .card-item {
-    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+    width: calc(100% / 1); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
   }
   h1{
     margin:5px;
@@ -95,20 +113,24 @@ export default {
     margin:5px;
   }
 }
-@media screen and (max-width: 768px) {
+
+/* Estilos para telas médias (tablets e dispositivos maiores) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
-    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+    width: calc(100% / 3); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+  }
+  h1{
+    margin:5px;
+  }
+  p{
+    margin:5px;
   }
 }
-@media screen and (max-width: 768px) {
-  .card-item {
-    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
-  }
-}
-@media screen and (max-width: 768px) {
-  .card-item {
-    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
-  }
+
+/* Estilos para telas grandes (monitores desktop e laptops) */
+@media screen and (min-width: 993px){
+ 
 }
 </style>
+
 

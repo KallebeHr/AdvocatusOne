@@ -10,22 +10,22 @@
         <li><a href="#">Contatos</a></li>
       </ul>
       <v-icon v-if="isMobile"  @click="expand = !expand" style="cursor: pointer;" icon="mdi-menu" />
-      
     </header>
-    <v-fade-transition mode="out-in" v-if="isMobile">
-        <v-card
-          v-show="expand"
-          class="headerMenu"
-        >
-        <v-btn @click="expand = !expand" class="bnt-menu">Inicio</v-btn>
-        <v-btn @click="expand = !expand" class="bnt-menu">Serviços</v-btn>
-        <v-btn @click="expand = !expand" class="bnt-menu">Casos</v-btn>
-        <v-btn @click="expand = !expand" class="bnt-menu">Testemunhos</v-btn>
-        <v-btn @click="expand = !expand" class="bnt-menu">Contatos</v-btn>
-
-        
-      </v-card>
-      </v-fade-transition>
+      
+      <v-fade-transition mode="out-in" v-if="isMobile">
+          <v-card
+            v-show="expand"
+            class="headerMenu"
+          >
+          <v-btn @click="expand = !expand" class="bnt-menu">Inicio</v-btn>
+          <v-btn @click="expand = !expand" class="bnt-menu">Serviços</v-btn>
+          <v-btn @click="expand = !expand" class="bnt-menu">Casos</v-btn>
+          <v-btn @click="expand = !expand" class="bnt-menu">Testemunhos</v-btn>
+          <v-btn @click="expand = !expand" class="bnt-menu">Contatos</v-btn>
+  
+          
+        </v-card>
+        </v-fade-transition>
   </div>
 </template>
 
@@ -78,6 +78,7 @@ header{
 .headerMenu{
   position: fixed;
   top: 0;
+  z-index: 999;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -97,18 +98,19 @@ header .logo {
   transition: .6s;
 }
 .bnt-menu{
-  margin-top: 1rem;
   width:100%;
   background-color: transparent; 
-  padding: 1rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  margin: 5px;
+  padding: 15px;
   color: #1e1e1e;
   font-size: 13px;
   transition: .6s;
   border: none;
   box-shadow:none;
   text-transform:none;
+  --v-btn-height: 0;
 }
 .bnt-menu:focus{
 }
