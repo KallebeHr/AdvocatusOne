@@ -61,7 +61,7 @@ export default {
 }
 
 .card-item {
-  width: calc(100% / 2); /* Cada serviço ocupará 1/3 do espaço */
+  width: calc(100% / 4); /* Cada serviço ocupará 1/3 do espaço */
   height: 15rem;
   padding: 1rem;
   margin: 1rem;
