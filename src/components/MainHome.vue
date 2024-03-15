@@ -117,7 +117,7 @@ export default {
 /* Estilos para telas médias (tablets e dispositivos maiores) */
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
-    width: calc(100% / 3); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
   }
   h1{
     margin:5px;
