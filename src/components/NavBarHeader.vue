@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>
+    <header  :class="{ 'hidden': !headerVisible }">
       <a href="#" class="logo">Advocatus</a>
       <ul v-if="!isMobile">
         <li><a href="#" style="color: red;">Inicio</a></li>
@@ -12,20 +12,15 @@
       <v-icon v-if="isMobile"  @click="expand = !expand" style="cursor: pointer;" icon="mdi-menu" />
     </header>
       
-      <v-fade-transition mode="out-in" v-if="isMobile">
-          <v-card
-            v-show="expand"
-            class="headerMenu"
-          >
-          <v-btn @click="expand = !expand" class="bnt-menu">Inicio</v-btn>
-          <v-btn @click="expand = !expand" class="bnt-menu">Serviços</v-btn>
-          <v-btn @click="expand = !expand" class="bnt-menu">Casos</v-btn>
-          <v-btn @click="expand = !expand" class="bnt-menu">Testemunhos</v-btn>
-          <v-btn @click="expand = !expand" class="bnt-menu">Contatos</v-btn>
-  
-          
-        </v-card>
-        </v-fade-transition>
+    <v-expand-transition mode="out-in" v-if="isMobile">
+  <v-card v-show="expand" class="headerMenu">
+    <v-btn @click="expand = !expand" class="bnt-menu">Inicio</v-btn>
+    <v-btn @click="expand = !expand" class="bnt-menu">Serviços</v-btn>
+    <v-btn @click="expand = !expand" class="bnt-menu">Casos</v-btn>
+    <v-btn @click="expand = !expand" class="bnt-menu">Testemunhos</v-btn>
+    <v-btn @click="expand = !expand" class="bnt-menu">Contatos</v-btn>
+  </v-card>
+</v-expand-transition>
   </div>
 </template>
 
@@ -37,21 +32,42 @@ export default {
   setup() {
     const isMobile = ref(false);
     const expand = ref(false);
+    const headerVisible = ref(true);
 
     const handleWindowSizeChange = () => {
       isMobile.value = window.innerWidth <= 1000;
     };
 
+    const handleOutsideClick = (event) => {
+      // Verifica se o elemento clicado não está dentro do header
+      if (!event.target.closest('header')) {
+        headerVisible.value = false;
+      }
+    };
+
+    const handleScroll = () => {
+      // Esconde o header quando o usuário rola a página
+      headerVisible.value = false;
+    };
+
     onMounted(() => {
       handleWindowSizeChange();
       window.addEventListener('resize', handleWindowSizeChange);
+      document.addEventListener('click', handleOutsideClick);
+      window.addEventListener('scroll', handleScroll);
     });
 
     onBeforeUnmount(() => {
       window.removeEventListener('resize', handleWindowSizeChange);
+      document.removeEventListener('click', handleOutsideClick);
+      window.removeEventListener('scroll', handleScroll);
     });
 
-    return { isMobile, expand };
+    return {
+       isMobile,
+       expand,
+       headerVisible
+    };
   }
 };
 </script>

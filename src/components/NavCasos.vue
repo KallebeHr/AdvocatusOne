@@ -25,16 +25,6 @@
           <h2>heuller Kallebe</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,</p>
         </div>
-        <div class="item-card">
-          <img src="../assets/IMG/work-process-item-01.png" alt="">
-          <h2>heuller Kallebe</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,</p>
-        </div>
-        <div class="item-card">
-          <img src="../assets/IMG/work-process-item-01.png" alt="">
-          <h2>heuller Kallebe</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,</p>
-        </div>
       </div>
     </div>
   </template>
@@ -75,7 +65,7 @@
     background: aliceblue;
     height: 15rem;
     width: calc(100% / 6); 
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     margin: 10px;
   }
@@ -91,7 +81,7 @@
   /* Estilos para telas pequenas (celulares em modo paisagem e menor) */
   @media screen and (max-width: 580px) {
     .item-card {
-      height: 15rem;
+      height: 16rem;
       width: calc(100% / 3); 
       padding: 10px;
       margin: 10px;
@@ -102,7 +92,6 @@
   
     .item-card > h2,
     .item-card > p {
-      width: 5.8rem;
       font-size: 13px;
     }
   }
@@ -110,11 +99,8 @@
   /* Estilos para telas médias (tablets e dispositivos maiores) */
   @media screen and (min-width: 581px) and (max-width: 800px) {
     .item-card {
-      height: 15rem;
-      width: calc(100% / 5); 
-    }
-    .item-card {
-      height: 17rem;
+      height: 12rem;
+      width: calc(100% / 3); 
     }
   }
   
