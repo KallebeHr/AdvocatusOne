@@ -8,25 +8,25 @@
     </section>
     <section class="cardHome">
       <div class="card-item">
-        <img src="../assets/IMG/icons8-install-64.png" alt="">
-        <h2>Serviço 1</h2>
-        <p>Descrição do serviço 1.</p>
-        <p>Descrição do serviço 1.</p>
-        <p>Descrição do serviço 1.</p>
+        <img src="../assets/IMG/icons8-install-64.png" class="card-item-img" alt="">
+        <h2>Titulo Sobre</h2>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
       </div>
       <div class="card-item">
-        <img src="../assets/IMG/icons8-install-64.png" alt="">
-        <h2>Serviço 2</h2>
-        <p>Descrição do serviço 2.</p>
-        <p>Descrição do serviço 2.</p>
-        <p>Descrição do serviço 2.</p>
+        <img src="../assets/IMG/icons8-install-64.png" class="card-item-img" alt="">
+        <h2>Titulo Sobre</h2>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
       </div>
       <div class="card-item">
-        <img src="../assets/IMG/icons8-install-64.png" alt="">
-        <h2>Serviço 3</h2>
-        <p>Descrição do serviço 3.</p>
-        <p>Descrição do serviço 3.</p>
-        <p>Descrição do serviço 3.</p>
+        <img src="../assets/IMG/icons8-install-64.png" class="card-item-img" alt="">
+        <h2>Titulo Sobre</h2>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
+        <p>Descrição do Sobre.</p>
       </div>
     </section>
   </div>    
@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .hero {
   margin-top: 7rem;
   font-size: 18px;
@@ -65,17 +65,22 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: url('../assets/IMG/wave (1).svg');
-  background-size: cover; /* Ajusta o tamanho do background para cobrir toda a área */
-  background-position: center; /* Centraliza o background na seção */
-  padding: 100px 0; /* Espaçamento interno superior e inferior da seção */
+  margin-top: 5rem;
+
+}
+.card-item-img{
+
+background:#0099ff;
+padding:10px;
+border-radius: 35px;
+
 }
 .card-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: calc(100% / 4); /* Cada serviço ocupará 1/3 do espaço */
+  width: calc(100% / 4);
   height: 15rem;
   padding: 1rem;
   margin: 1rem;
@@ -95,16 +100,18 @@ export default {
 }
 .card-item h2 {
   color: #0099ff;
+  font-size: 1.5rem;
 }
 
 .card-item p {
   color: #666;
+  font-size: .8rem;
 }
 
 /* Estilos para telas pequenas (celulares em modo paisagem e menor) */
 @media screen and (max-width: 576px) {
   .card-item {
-    width: calc(100% / 1); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+    width: calc(100% / 1); 
   }
   h1{
     margin:5px;
@@ -117,7 +124,7 @@ export default {
 /* Estilos para telas médias (tablets e dispositivos maiores) */
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
-    width: calc(100% / 2); /* Em telas menores, cada serviço ocupará 1/2 do espaço */
+    width: calc(100% / 3); 
   }
   h1{
     margin:5px;
@@ -125,11 +132,12 @@ export default {
   p{
     margin:5px;
   }
+ 
 }
 
 /* Estilos para telas grandes (monitores desktop e laptops) */
 @media screen and (min-width: 993px){
- 
+
 }
 </style>
 
