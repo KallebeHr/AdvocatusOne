@@ -197,7 +197,7 @@ header ul li a:hover {
   .headerMenu{
     width: 90%;
     padding: 30px 20px;
-    margin-top: 30px;
+    margin-top: 45px;
   }
   header .logo {
     font-size: 1rem;
