@@ -81,7 +81,7 @@ export default {
 /* Estilos para telas pequenas (celulares em modo paisagem e menor) */
 @media screen and (max-width: 580px) {
   .item-card {
-    height: 12.5rem;
+    height: 15.5rem;
     width: calc(100% / 2); 
     padding: 1.5rem;  
     margin: 1rem;  

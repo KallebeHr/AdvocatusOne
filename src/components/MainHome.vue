@@ -7,7 +7,7 @@
       </main>
     </section>
     <section class="cardHome" ref="box">
-      <div class="card-item" v-for="(item, index) in items" :key="index" :ref="`card${index + 1}`" :class="{ 'visible': isVisible[index] }">
+      <div class="card-item" v-for="(item, index) in items" :key="index" :ref="`${index + 1}`" :class="{ 'visible': isVisible[index] }">
         <img src="../assets/IMG/icons8-install-64.png" class="card-item-img" alt="">
         <h2>Titulo Sobre</h2>
         <p>Descrição do Sobre.</p>
@@ -23,7 +23,13 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   setup() {
-  
+    const items = [1, 2, 3];
+    const isVisible = ref([true, true, true]); // Inicializando isVisible como um ref com valores padrão
+
+    return {
+      items,
+      isVisible
+    };
   }
 };
 </script>
@@ -32,7 +38,7 @@ export default {
 .hero {
   margin-top: 7rem;
   font-size: 18px;
-  background-image: url('tal.svg');
+  background-image: url('/caminho/para/o/seu/arquivo.svg');
   background-size: cover;
   background-position: center;
   padding: 5rem 0;
@@ -79,9 +85,6 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 1;
   cursor: pointer;
-}
-
-.card-item {
   color: #666;
 }
 
@@ -91,7 +94,6 @@ export default {
 }
 
 .card-item p {
-  color: #666;
   font-size: 0.8rem;
 }
 
@@ -99,13 +101,6 @@ export default {
 @media screen and (max-width: 576px) {
   .card-item {
     width: calc(100% / 1);
-  }
-
-  h1 {
-    margin: 5px;
-  }
-
-  p {
     margin: 5px;
   }
 }
@@ -114,18 +109,7 @@ export default {
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
     width: calc(100% / 3);
-  }
-
-  h1 {
     margin: 5px;
   }
-
-  p {
-    margin: 5px;
-  }
-}
-
-/* Estilos para telas grandes (monitores desktop e laptops) */
-@media screen and (min-width: 993px) {
 }
 </style>
