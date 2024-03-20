@@ -15,7 +15,8 @@
   import MainHome from './components/MainHome.vue'
   import NavSobre from './components/NavSobre.vue'
   import NavCasos from './components/NavCasos.vue'
-  import NavTestemunhos from './components/testemunhos.vue'
+  import NavTestemunhos from './components/NavTestemunhos.vue';
+
 </script>
 <style>
 

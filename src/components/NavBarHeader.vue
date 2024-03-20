@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header  :class="{ 'hidden': !headerVisible }">
+    <header :class="{ 'hidden': !headerVisible }">
       <a href="#" class="logo">Advocatus</a>
       <ul v-if="!isMobile">
         <li><a href="#" style="color: red;">Inicio</a></li>
@@ -9,18 +9,18 @@
         <li><a href="#">Testemunhos</a></li>
         <li><a href="#">Contatos</a></li>
       </ul>
-      <v-icon v-if="isMobile"  @click="expand = !expand" style="cursor: pointer;" icon="mdi-menu" />
+      <v-icon v-if="isMobile" @click="toggleMenu" style="cursor: pointer;" icon="mdi-menu" />
     </header>
-      
+
     <v-expand-transition mode="out-in" v-if="isMobile">
-  <v-card v-show="expand" class="headerMenu">
-    <v-btn @click="expand = !expand" class="bnt-menu">Inicio</v-btn>
-    <v-btn @click="expand = !expand" class="bnt-menu">Serviços</v-btn>
-    <v-btn @click="expand = !expand" class="bnt-menu">Casos</v-btn>
-    <v-btn @click="expand = !expand" class="bnt-menu">Testemunhos</v-btn>
-    <v-btn @click="expand = !expand" class="bnt-menu">Contatos</v-btn>
-  </v-card>
-</v-expand-transition>
+      <v-card v-show="expand" :class="{ 'no-margin': !expand }" class="headerMenu">
+        <v-btn @click="toggleMenu" style="margin-top:30px;" class="bnt-menu">Inicio</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Serviços</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Casos</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Testemunhos</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Contatos</v-btn>
+      </v-card>
+    </v-expand-transition>
   </div>
 </template>
 
@@ -38,16 +38,33 @@ export default {
       isMobile.value = window.innerWidth <= 1000;
     };
 
+    const toggleMenu = () => {
+       expand.value = !expand.value;
+      // Verifica se o menu está sendo fechado
+      if (!expand.value) {
+        // Define um tempo de 500ms antes de remover a margem
+        setTimeout(() => {
+          headerVisible.value = false;
+        }, 20000);
+      }
+    };
+
     const handleOutsideClick = (event) => {
       // Verifica se o elemento clicado não está dentro do header
       if (!event.target.closest('header')) {
         headerVisible.value = false;
+        if (expand.value) {
+          expand.value = false;
+        }
       }
     };
 
     const handleScroll = () => {
       // Esconde o header quando o usuário rola a página
       headerVisible.value = false;
+      if (expand.value) {
+        expand.value = false;
+      }
     };
 
     onMounted(() => {
@@ -64,13 +81,15 @@ export default {
     });
 
     return {
-       isMobile,
-       expand,
-       headerVisible
+      isMobile,
+      expand,
+      headerVisible,
+      toggleMenu
     };
   }
 };
 </script>
+
 
 <style scoped>
 header{
@@ -87,7 +106,7 @@ header{
   margin-top: 25px;
   padding: 40px 50px;
   z-index: 100000;
-  border-radius: 50px;
+  border-radius: 4rem;
   background-color: #ececec;
   font-family: "Raleway", sans-serif;
 }
@@ -98,10 +117,10 @@ header{
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  height: 20rem;
+  height: 18rem;
   background-color: #ececec;
-  border-radius: 0 0 50px 50px;
-  margin-top: 60px
+  border-radius: 2rem 2rem 4rem 4rem;
+  margin-top: 30px;
   
 } 
 header .logo {
@@ -113,13 +132,20 @@ header .logo {
   letter-spacing: 2px;
   transition: .6s;
 }
+.headerMenu {
+  margin-top: 3rem; 
+}
+
+.no-margin {
+ display:none;
+}
 .bnt-menu{
   width:100%;
   background-color: transparent; 
   font-weight: 600;
   letter-spacing: 3px;
   margin: 5px;
-  padding: 15px;
+  padding: 10px;
   color: #1e1e1e;
   font-size: 13px;
   transition: .6s;
@@ -167,11 +193,11 @@ header ul li a:hover {
   header {
     width: 90%;
     padding: 20px 20px;
-    height: auto;
   }
   .headerMenu{
     width: 90%;
     padding: 30px 20px;
+    margin-top: 30px;
   }
   header .logo {
     font-size: 1rem;
