@@ -5,7 +5,9 @@
       <MainHome />
       <NavSobre />
       <NavCasos />
-      <NavTestemunhos />
+      <NavTestemunhos /> 
+      <NavContatos /> 
+      <NavFooter />
     </v-main>
   </v-app>
 </template>
@@ -16,6 +18,8 @@
   import NavSobre from './components/NavSobre.vue'
   import NavCasos from './components/NavCasos.vue'
   import NavTestemunhos from './components/NavTestemunhos.vue';
+  import NavContatos from './components/NavContatos.vue';
+  import NavFooter from './components/NavFooter.vue';
 
 </script>
 <style>

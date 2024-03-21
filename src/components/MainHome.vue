@@ -24,7 +24,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 export default {
   setup() {
     const items = [1, 2, 3];
-    const isVisible = ref([true, true, true]); // Inicializando isVisible como um ref com valores padrão
+    const isVisible = ref([true, true, true]); 
 
     return {
       items,
