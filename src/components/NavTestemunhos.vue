@@ -23,9 +23,9 @@
   export default {
     setup() {
       const users = [
-        { id: 1, name: "Kallebe", testimony: "Testemunho do Kallebe, Testemunho do Kallebe, Testemunho do Kallebe" },
-        { id: 2, name: "Fulano", testimony: "Testemunho do Fulano, Testemunho do Fulano, Testemunho do Fulano" },
-        { id: 3, name: "Ciclano", testimony: "Testemunho do Ciclano, Testemunho do Ciclano, Testemunho do Ciclano" }
+        { id: 1, name: "Kallebe", testimony: "⁠Na minha cabeça, eu sou o melhor. Se não pensarmos assim não temos ambição. Posso não ser, mas na minha cabeça eu sou o melhor." },
+        { id: 2, name: "Marcos Davi", testimony: "Gostei bastante da responsividade e paleta de cores, mas sou fresco e n consigo admitir" },
+        { id: 3, name: "Victor Lima", testimony: "ficou bem melhor do que os meus, porem não consigo assumir isso pro Kallebe" }
       ];
   
       return {

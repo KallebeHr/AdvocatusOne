@@ -18,6 +18,20 @@
         </div>
         <v-divider style="margin: 1rem;"></v-divider>
         <div class="cardHome">
+            <div class="card-item" style="flex-direction: row-reverse;">
+                <div class="card-img">
+                    <img src="../assets/IMG/left-image.png" alt="">
+                </div>
+                <div class="card-sobre">
+                    <h2>Ajudando a mudar vidas com a lei</h2>
+                    <p>Explore nossas diversas áreas de prática, desde direito civil e criminal até direito empresarial
+                        e imobiliário.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <v-divider style="margin: 1rem;"></v-divider>
+        <div class="cardHome">
             <div class="card-item">
                 <div class="card-img">
                     <img src="../assets/IMG/left-image.png" alt="">

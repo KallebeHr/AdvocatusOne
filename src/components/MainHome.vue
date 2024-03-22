@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <section class="hero">
       <main class="main-content">
         <h1>Seus problemas legais, nossas soluções especializadas.</h1>
@@ -35,8 +35,10 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  background: rgba(137, 43, 226, 0.253);
+}
 .hero {
-  margin-top: 7rem;
   font-size: 18px;
   background-image: url('/caminho/para/o/seu/arquivo.svg');
   background-size: cover;
@@ -49,6 +51,7 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top:7rem;
 }
 
 .main-content h1 {
@@ -60,12 +63,18 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 5rem;
+  
 }
+.card-item:hover > .card-item-img{
+  background: #0099ff63;
+  transition: .4s;
 
+} 
 .card-item-img {
   background: #0099ff;
   padding: 10px;
   border-radius: 35px;
+  transition: .4s;
 }
 
 .card-item {
@@ -77,7 +86,7 @@ export default {
   height: 15rem;
   padding: 1rem;
   margin: 1rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(255, 255, 255);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
@@ -101,7 +110,7 @@ export default {
 @media screen and (max-width: 576px) {
   .card-item {
     width: calc(100% / 1);
-    margin: 5px;
+    margin: 2rem;
   }
 }
 
@@ -109,7 +118,7 @@ export default {
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
     width: calc(100% / 3);
-    margin: 5px;
+    margin: 1.5rem;
   }
 }
 </style>
