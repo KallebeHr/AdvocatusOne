@@ -1,5 +1,5 @@
 <template>
-    <section class="container">
+    <section class="container" id="depoimentos">
       <div class="titulos">
 
         <h2>O que eles falam?</h2>

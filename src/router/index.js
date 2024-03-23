@@ -14,7 +14,7 @@ const routes = [
   { path: '/casos', component: NavCasos },
   { path: '/serviços', component: NavCasos },
   { path: '/testemunhos', component: NavCasos },
-  // Outras rotas aqui...
+
 ];
 
 const router = createRouter({

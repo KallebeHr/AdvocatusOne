@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="inicio">
     <section class="hero">
       <main class="main-content">
         <h1>Construindo um Futuro Legal para Sua Família</h1>

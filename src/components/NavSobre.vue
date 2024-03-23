@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="sobre">
       <div class="titulo">
           <h1>Conheça Nossa História</h1>
       </div>

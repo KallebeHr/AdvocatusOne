@@ -3,22 +3,24 @@
     <header :class="{ 'hidden': !headerVisible }">
       <a href="#" class="logo">Advocatus</a>
       <ul v-if="!isMobile">
-        <li><router-link  style="color: red;" to="/home">Inicio</router-link></li>
-        <li><router-link to="/serviços">Sobre Nós</router-link></li>
-        <li><router-link to="/casos">Casos de Sucesso</router-link></li>
-        <li><router-link to="/testemunhos">Depoimentos</router-link></li>
-        <li><router-link to="/contatos">Contatos</router-link></li>
+        <!-- <li @click="handleClick('#contatos')">Contatos</li> -->
+        <li><a @click="handleClick('#inicio')" style="color:red;" href="#">Inicio</a></li>
+        <li><a @click="handleClick('#sobre')" href="#">Sobre Nós</a></li>
+        <li><a @click="handleClick('#casos')" href="#">Casos de Sucesso</a></li>
+        <li><a @click="handleClick('#depoimentos')" href="#">Depoimentos</a></li>
+        <li><a @click="handleClick('#contatos')" href="#">Contatos</a></li>
       </ul>
       <v-icon v-if="isMobile" @click="toggleMenu" style="cursor: pointer;" icon="mdi-menu" />
     </header>
 
     <v-expand-transition mode="out-in" v-if="isMobile">
       <v-card v-show="expand" :class="{ 'no-margin': !expand }" class="headerMenu">
-        <v-btn @click="toggleMenu" style="margin-top:30px;" class="bnt-menu">Inicio</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Sobre Nós</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Casos de Sucesso</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Depoimentos</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Contatos</v-btn>
+        
+        <v-btn @click="handleClick('#inicio')" style="margin-top:30px;" class="bnt-menu">Inicio</v-btn>
+        <v-btn @click="handleClick('#sobre')" class="bnt-menu">Sobre Nós</v-btn>
+        <v-btn @click="handleClick('#casos')" class="bnt-menu">Casos de Sucesso</v-btn>
+        <v-btn @click="handleClick('#depoimentos')" class="bnt-menu">Depoimentos</v-btn>
+        <v-btn @click="handleClick('#contatos')" class="bnt-menu">Contatos</v-btn>
       </v-card>
     </v-expand-transition>
   </div>
@@ -27,15 +29,21 @@
 <script>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router'
+import {useGoTo} from 'vuetify'
 
 export default {
   name: 'HeaderAndNav',
   setup() {
 
-
+    const goTo = useGoTo()
     const isMobile = ref(false);
     const expand = ref(false);
     const headerVisible = ref(true);
+
+    function handleClick(id){
+      goTo(id)
+      toggleMenu()
+    }
 
     const handleWindowSizeChange = () => {
       isMobile.value = window.innerWidth <= 1000;
@@ -88,6 +96,9 @@ export default {
       expand,
       headerVisible,
       toggleMenu,
+      goTo,
+      useGoTo,
+      handleClick
     };
   }
 };
