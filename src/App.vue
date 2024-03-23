@@ -20,7 +20,18 @@
   import NavTestemunhos from './components/NavTestemunhos.vue';
   import NavContatos from './components/NavContatos.vue';
   import NavFooter from './components/NavFooter.vue';
-
+  import { useRoute } from 'vue-router'
+  export default defineComponent({
+  components: {
+    NavBarHeader,
+    MainHome,
+    NavSobre,
+    NavCasos,
+    NavTestemunhos,
+    NavContatos,
+    NavFooter
+  }
+});
 </script>
 <style>
 

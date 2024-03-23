@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <div class="titulos">
-      <h2>Processos</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper, quis faucibus sem ultricies.</p>
+
+      <h2>Casos de Sucesso</h2>
+      <p>Nossos ultimos Casos de Sucessos</p>
     </div>
     <div class="item">
       <div v-for="item in items" :key="item.id" class="item-card">
@@ -19,12 +20,12 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' },
-        { id: 2, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' },
-        { id: 3, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' },
-        { id: 4, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' },
-        { id: 5, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' },
-        { id: 6, title: 'Heuller Kallebe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet tellus sit amet ante ullamcorper,', image: '../src/assets/IMG/work-process-item-01.png' }
+        { id: 1, title: 'Divórcio Amigável', description: 'O Sr. e a Sra. Silva enfrentaram um divórcio amigável após anos de casamento. Com a ajuda dos nossos advogados, conseguiram chegar a um acordo justo e respeitoso, garantindo o bem-estar de toda a família.', image: '../src/assets/IMG/work-process-item-01.png' },
+        { id: 2, title: 'Herança Contestada', description: 'A família Oliveira enfrentou uma disputa complexa sobre a herança de um parente falecido. Nossos advogados conseguiram resolver o conflito de forma rápida e eficaz, protegendo os interesses de todos os envolvidos.', image: '../src/assets/IMG/work-process-item-01.png' },
+        { id: 3, title: 'Acordo Trabalhista', description: 'O cliente João Santos enfrentou uma disputa com seu empregador sobre questões trabalhistas. Com a representação legal da nossa equipe, ele obteve um acordo justo que garantiu seus direitos e compensações adequadas.', image: '../src/assets/IMG/work-process-item-01.png' },
+        { id: 4, title: 'Casamento Internacional', description: 'O casal Silva e Garcia, de nacionalidades diferentes, buscava orientação jurídica para seu casamento internacional. Nossos advogados auxiliaram em todo o processo, garantindo que todos os requisitos legais fossem atendidos com sucesso.', image: '../src/assets/IMG/work-process-item-01.png' },
+        { id: 5, title: 'Adoção Concluída', description: 'O casal Pereira finalmente concluiu o processo de adoção de seu filho após anos de espera e desafios legais. Nossa equipe ofereceu suporte jurídico durante todo o processo, tornando possível a realização desse sonho.', image: '../src/assets/IMG/work-process-item-01.png' },
+        { id: 6, title: 'Negociação Imobiliária', description: 'O cliente Maria Alves enfrentava dificuldades em uma negociação imobiliária complexa. Com a assistência dos nossos advogados especializados, ela conseguiu chegar a um acordo vantajoso que atendeu às suas necessidades e objetivos.', image: '../src/assets/IMG/work-process-item-01.png' }
       ]
     }
   }
@@ -54,15 +55,15 @@ export default {
 .item-card {
   text-align: center;
   background: aliceblue;
-  height: auto; /* Alterado para altura automática */
+  height: auto; 
   width: calc(100% / 8);
   padding: 1rem;
   border-radius: 10px;
   transition: .2s;
   margin: 1rem;
-  display: flex; /* Adicionado para permitir alinhamento vertical */
-  flex-direction: column; /* Adicionado para alinhar o conteúdo verticalmente */
-  justify-content: space-between; /* Adicionado para espaço uniforme entre o título e o texto */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
 }
 .item-card:hover{
   transform: translateY(-8px);
@@ -71,23 +72,23 @@ export default {
 
 .item-card > h2 {
   font-size: 1rem;
-  margin-bottom: 0.5rem; /* Adicionado espaçamento inferior */
+  margin-bottom: 0.5rem;
 }
 
 .item-card > p {
   font-size: 0.9rem;
-  flex-grow: 1; /* Permite que o texto cresça para ocupar o espaço disponível */
+  flex-grow: 1; 
 }
 .item-card > img {
-  width: 20%; /* Reduz a largura da imagem para 50% do card */
-  height: auto; /* Permite que a altura da imagem seja ajustada automaticamente de acordo com a largura */
-  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-  margin: 0 auto 0.5rem auto; /* Centraliza a imagem horizontalmente e adiciona um espaço abaixo */
+  width: 28px; 
+  height: auto; 
+  max-width: 100%;
+  margin: 0 auto 0.5rem auto;
 }
 /* Responsividade */
 @media screen and (max-width: 580px) {
   .item-card {
-    height: auto; /* Alterado para altura automática */
+    height: auto;
     width: calc(100% / 2);
     padding: .5rem;
   }
@@ -99,14 +100,14 @@ export default {
 
 @media screen and (min-width: 581px) and (max-width: 800px) {
   .item-card {
-    height: auto; /* Alterado para altura automática */
+    height: auto; 
     width: calc(100% / 3);
   }
 }
 
 @media screen and (min-width: 801px) and (max-width: 992px) {
   .item-card {
-    height: auto; /* Alterado para altura automática */
+    height: auto; 
     width: calc(100% / 5);
     padding: .5rem;
   }
@@ -114,7 +115,7 @@ export default {
 @media screen and (max-width: 1110px){
   .item-card {
     height: auto;
-    width: calc(100% / );
+    width: calc(100% / 1 );
     padding: .5rem;
   }
 }

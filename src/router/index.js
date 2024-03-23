@@ -1,14 +1,25 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
+import { createRouter, createWebHistory } from 'vue-router';
+import NavBarHeader from '../components/NavBarHeader.vue'
+import MainHome from '../components/MainHome.vue'
+import NavSobre from '../components/NavSobre.vue'
+import NavCasos from '../components/NavCasos.vue'
+import NavTestemunhos from '../components/NavTestemunhos.vue';
+import NavContatos from '../components/NavContatos.vue';
+import NavFooter from '../components/NavFooter.vue';
 
-// Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
+const routes = [
+  {path: '/', component: MainHome },
+  { path: '/home', component: MainHome },
+  { path: '/contatos', component: NavContatos },
+  { path: '/casos', component: NavCasos },
+  { path: '/serviços', component: NavCasos },
+  { path: '/testemunhos', component: NavCasos },
+  // Outras rotas aqui...
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-})
+  history: createWebHistory(),
+  routes
+});
 
-export default router
+export default router;

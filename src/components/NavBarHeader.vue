@@ -3,11 +3,11 @@
     <header :class="{ 'hidden': !headerVisible }">
       <a href="#" class="logo">Advocatus</a>
       <ul v-if="!isMobile">
-        <li><a href="#" style="color: red;">Inicio</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Casos</a></li>
-        <li><a href="#">Testemunhos</a></li>
-        <li><a href="#">Contatos</a></li>
+        <li><router-link  style="color: red;" to="/home">Inicio</router-link></li>
+        <li><router-link to="/serviços">Sobre Nós</router-link></li>
+        <li><router-link to="/casos">Casos de Sucesso</router-link></li>
+        <li><router-link to="/testemunhos">Depoimentos</router-link></li>
+        <li><router-link to="/contatos">Contatos</router-link></li>
       </ul>
       <v-icon v-if="isMobile" @click="toggleMenu" style="cursor: pointer;" icon="mdi-menu" />
     </header>
@@ -15,9 +15,9 @@
     <v-expand-transition mode="out-in" v-if="isMobile">
       <v-card v-show="expand" :class="{ 'no-margin': !expand }" class="headerMenu">
         <v-btn @click="toggleMenu" style="margin-top:30px;" class="bnt-menu">Inicio</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Serviços</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Casos</v-btn>
-        <v-btn @click="toggleMenu" class="bnt-menu">Testemunhos</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Sobre Nós</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Casos de Sucesso</v-btn>
+        <v-btn @click="toggleMenu" class="bnt-menu">Depoimentos</v-btn>
         <v-btn @click="toggleMenu" class="bnt-menu">Contatos</v-btn>
       </v-card>
     </v-expand-transition>
@@ -26,10 +26,13 @@
 
 <script>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'HeaderAndNav',
   setup() {
+
+
     const isMobile = ref(false);
     const expand = ref(false);
     const headerVisible = ref(true);
@@ -40,9 +43,9 @@ export default {
 
     const toggleMenu = () => {
        expand.value = !expand.value;
-      // Verifica se o menu está sendo fechado
+      // Menu aberto ou fechado
       if (!expand.value) {
-        // Define um tempo de 500ms antes de remover a margem
+        // tempo antes de remover a margem
         setTimeout(() => {
           headerVisible.value = false;
         }, 20000);
@@ -50,7 +53,7 @@ export default {
     };
 
     const handleOutsideClick = (event) => {
-      // Verifica se o elemento clicado não está dentro do header
+      // se foi clicado dentro do header
       if (!event.target.closest('header')) {
         headerVisible.value = false;
         if (expand.value) {
@@ -60,7 +63,7 @@ export default {
     };
 
     const handleScroll = () => {
-      // Esconde o header quando o usuário rola a página
+      //
       headerVisible.value = false;
       if (expand.value) {
         expand.value = false;
@@ -84,7 +87,7 @@ export default {
       isMobile,
       expand,
       headerVisible,
-      toggleMenu
+      toggleMenu,
     };
   }
 };
@@ -224,7 +227,7 @@ header ul li a:hover {
   }
 
   header .logo {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -235,9 +238,9 @@ header ul li a:hover {
   }
 
   header ul li a {
-    margin: 0 10px;
+    margin: 0 11px;
     letter-spacing: 2px;
-    font-size: 13px;
+    font-size: 11.5px;
   }
 
   header .logo {

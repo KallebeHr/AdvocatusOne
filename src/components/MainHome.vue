@@ -2,17 +2,15 @@
   <div class="container">
     <section class="hero">
       <main class="main-content">
-        <h1>Seus problemas legais, nossas soluções especializadas.</h1>
-        <p>Olá! Pronto para resolver seus desafios legais. Explore para encontrar a assistência que você precisa</p>
+        <h1>Construindo um Futuro Legal para Sua Família</h1>
+        <p>Em nosso escritório, buscamos proporcionar soluções legais eficazes para nossos clientes. Com uma equipe experiente e dedicada, estamos prontos para ajudá-lo a resolver seus problemas jurídicos.</p>
       </main>
     </section>
     <section class="cardHome" ref="box">
-      <div class="card-item" v-for="(item, index) in items" :key="index" :ref="`${index + 1}`" :class="{ 'visible': isVisible[index] }">
+      <div class="card-item" v-for="(testimonial, index) in testimonials" :key="testimonial.id">
         <img src="../assets/IMG/icons8-install-64.png" class="card-item-img" alt="">
-        <h2>Titulo Sobre</h2>
-        <p>Descrição do Sobre.</p>
-        <p>Descrição do Sobre.</p>
-        <p>Descrição do Sobre.</p>
+        <h2>{{ testimonial.titulo }}</h2>
+        <p>{{ testimonial.descricao }}</p>
       </div>
     </section>
   </div>
@@ -23,12 +21,14 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   setup() {
-    const items = [1, 2, 3];
-    const isVisible = ref([true, true, true]); 
+    const testimonials = [
+      { id: 1, titulo: " Serviços Oferecidos", descricao: "Explore nossas áreas de especialização e descubra como nossa equipe dedicada pode ajudá-lo com uma ampla gama de questões legais." },
+      { id: 2, titulo: "Compromisso com o Cliente", descricao: "Nosso compromisso é fornecer atendimento jurídico de qualidade excepcional, com transparência, ética e dedicação total aos nossos clientes." },
+      { id: 3, titulo: "Experiência e Credibilidade", descricao: "Conte com nossa vasta experiência e credibilidade para resolver suas questões legais com eficiência e eficácia. Nossa equipe experiente está aqui para ajudar você a alcançar seus objetivos legais." }
+    ];
 
     return {
-      items,
-      isVisible
+      testimonials
     };
   }
 };
@@ -56,6 +56,13 @@ export default {
 
 .main-content h1 {
   color: #333;
+  margin: 10px;
+
+}
+.main-content > p{
+  margin: 10px;
+  width: 50rem;
+
 }
 
 .cardHome {
@@ -99,11 +106,11 @@ export default {
 
 .card-item h2 {
   color: #0099ff;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .card-item p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 /* Estilos para telas pequenas (celulares em modo paisagem e menor) */
@@ -112,13 +119,26 @@ export default {
     width: calc(100% / 1);
     margin: 2rem;
   }
+  .cardHome{
+  margin: 0;
+  }
+  .main-content > p{
+  margin: 10px;
+  width: 20rem;
+
+}
 }
 
 /* Estilos para telas médias (tablets e dispositivos maiores) */
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .card-item {
-    width: calc(100% / 3);
+    width: calc(100% / 2);
     margin: 1.5rem;
   }
+  .main-content > p{
+  margin: 10px;
+  width: 35rem;
+
+}
 }
 </style>

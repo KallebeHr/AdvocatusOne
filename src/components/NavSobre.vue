@@ -1,50 +1,49 @@
 <template>
-    <div class="container">
-        <div class="titulo">
-            <h1>Vamos discutir sobre os Serviços.</h1>
-        </div>
-        <div class="cardHome">
-            <div class="card-item">
-                <div class="card-img">
-                    <img src="../assets/IMG/left-image.png" alt="">
-                </div>
-                <div class="card-sobre">
-                    <h2>Ajudando a mudar vidas com a lei</h2>
-                    <p>Explore nossas diversas áreas de prática, desde direito civil e criminal até direito empresarial
-                        e imobiliário.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <v-divider style="margin: 1rem;"></v-divider>
-        <div class="cardHome">
-            <div class="card-item" style="flex-direction: row-reverse;">
-                <div class="card-img">
-                    <img src="../assets/IMG/left-image.png" alt="">
-                </div>
-                <div class="card-sobre">
-                    <h2>Ajudando a mudar vidas com a lei</h2>
-                    <p>Explore nossas diversas áreas de prática, desde direito civil e criminal até direito empresarial
-                        e imobiliário.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <v-divider style="margin: 1rem;"></v-divider>
-        <div class="cardHome">
-            <div class="card-item">
-                <div class="card-img">
-                    <img src="../assets/IMG/left-image.png" alt="">
-                </div>
-                <div class="card-sobre">
-                    <h2>Ajudando a mudar vidas com a lei</h2>
-                    <p>Explore nossas diversas áreas de prática, desde direito civil e criminal até direito empresarial
-                        e imobiliário.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="titulo">
+          <h1>Conheça Nossa História</h1>
+      </div>
+
+      <div class="cardHome">
+          <div class="card-item">
+              <div class="card-img">
+                  <img src="../assets/IMG/left-image.png" alt="">
+              </div>
+              <div class="card-sobre">
+                  <h2>Conheça Nossa Equipe</h2>
+                  <p>Nossa equipe é composta por advogados dedicados e experientes, prontos para oferecer o melhor suporte legal para você e sua família. Conheça cada membro da nossa equipe e saiba como podemos ajudá-lo a resolver suas questões jurídicas de maneira eficaz.</p>
+              </div>
+          </div>
+      </div>
+
+      <v-divider style="margin: 1rem;"></v-divider>
+
+      <div class="cardHome">
+          <div class="card-item" style="flex-direction: row-reverse;">
+              <div class="card-img">
+                  <img src="../assets/IMG/left-image.png" alt="">
+              </div>
+              <div class="card-sobre">
+                  <h2>Nossa Experiência em Direito de Família</h2>
+                  <p>Explore nossas diversas áreas de prática, desde direito civil e criminal até direito empresarial e imobiliário.</p>
+              </div>
+          </div>
+      </div>
+
+      <v-divider style="margin: 1rem;"></v-divider>
+
+      <div class="cardHome">
+          <div class="card-item">
+              <div class="card-img">
+                  <img src="../assets/IMG/left-image.png" alt="">
+              </div>
+              <div class="card-sobre">
+                  <h2>Comprometidos com Seu Bem-Estar Familiar</h2>
+                  <p>Estamos comprometidos em oferecer suporte jurídico personalizado e soluções eficazes para proteger seus interesses e promover relacionamentos saudáveis dentro da família.</p>
+              </div>
+          </div>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -65,6 +64,9 @@ export default {
   align-items: center;
   margin: 1rem;
 }
+.titulo > h1{
+  font-size: 1.5rem;
+}
 
 .cardHome {
   display: flex;
@@ -84,6 +86,8 @@ export default {
 
 .card-sobre {
   text-align: center;
+  margin-right:5px;
+  margin-left:5px;
 }
 
 .card-img {
@@ -92,15 +96,17 @@ export default {
 
 .card-sobre h2, .card-sobre p {
   color: black;
+
 }
 
 .card-sobre h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .card-sobre p {
   font-size: 1rem;
-  max-width: 20rem;
+  max-width: 27rem;
+
 }
 
 
@@ -122,7 +128,7 @@ export default {
 }
 
 /* Estilos para telas médias (tablets e dispositivos maiores) */
-@media screen and (min-width: 577px) and (max-width: 992px) {
+@media screen and (min-width: 577px) and (max-width: 999px) {
       .card-item {
     width: calc(100% / 1); 
     height: auto;
@@ -144,5 +150,5 @@ export default {
 }
 
 /* Estilos para telas grandes (monitores desktop e laptops) */
-@media screen and (min-width: 993px) {}
+
 </style>

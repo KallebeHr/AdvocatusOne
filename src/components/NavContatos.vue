@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <div class="titulos">
       <h2>Fale Conosco!</h2>
       <p>Sinta-se à vontade para entrar em contato conosco:</p>
@@ -48,8 +49,9 @@ export default {
     });
 
     const submit = () => {
-      // Lógica para enviar os dados do formulário
-      console.log(formData.value);
+      console.log("O Nome é " + formData.value.name);
+      console.log("O Email é " + formData.value.email);
+      console.log("A Mensagem é " + formData.value.message);
     };
 
     return { formData, submit };
@@ -107,7 +109,7 @@ export default {
 }
 .contatos a {
   text-decoration: none;
-  color: #000; /* Cor do texto para os links */
+  color: #000; 
 }
 
 .input, .textarea {
