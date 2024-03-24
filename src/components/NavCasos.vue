@@ -7,7 +7,7 @@
     </div>
     <div class="item">
       <div v-for="item in items" :key="item.id" class="item-card">
-        <img :src="item.image" :alt="item.alt">
+        <img src="/src/assets/IMG/foguete.png" :alt="item.alt">
         <h2>{{ item.title }}</h2>
         <p>{{ item.description }}</p>
       </div>
@@ -21,23 +21,17 @@ export default {
     return {
       items: [
         { id: 1, title: 'Divórcio Amigável',
-         description: 'O Sr. e a Sra. Silva enfrentaram um divórcio amigável após anos de casamento. Com a ajuda dos nossos advogados, conseguiram chegar a um acordo justo e respeitoso, garantindo o bem-estar de toda a família.',
-          image: '/src/assets/IMG/foguete.png' },
+         description: 'O Sr. e a Sra. Silva enfrentaram um divórcio amigável após anos de casamento. Com a ajuda dos nossos advogados, conseguiram chegar a um acordo justo e respeitoso, garantindo o bem-estar de toda a família.'},
         { id: 2, title: 'Herança Contestada',
-         description: 'A família Oliveira enfrentou uma disputa complexa sobre a herança de um parente falecido. Nossos advogados conseguiram resolver o conflito de forma rápida e eficaz, protegendo os interesses de todos os envolvidos.',
-          image: '/src/assets/IMG/foguete.png' },
+         description: 'A família Oliveira enfrentou uma disputa complexa sobre a herança de um parente falecido. Nossos advogados conseguiram resolver o conflito de forma rápida e eficaz, protegendo os interesses de todos os envolvidos.'},
         { id: 3, title: 'Acordo Trabalhista',
-         description: 'O cliente João Santos enfrentou uma disputa com seu empregador sobre questões trabalhistas. Com a representação legal da nossa equipe, ele obteve um acordo justo que garantiu seus direitos e compensações adequadas.',
-          image: '/src/assets/IMG/foguete.png' },
+         description: 'O cliente João Santos enfrentou uma disputa com seu empregador sobre questões trabalhistas. Com a representação legal da nossa equipe, ele obteve um acordo justo que garantiu seus direitos e compensações adequadas.'},
         { id: 4, title: 'Casamento Internacional',
-         description: 'O casal Silva e Garcia, de nacionalidades diferentes, buscava orientação jurídica para seu casamento internacional. Nossos advogados auxiliaram em todo o processo, garantindo que todos os requisitos legais fossem atendidos com sucesso.',
-          image: '/src/assets/IMG/foguete.png' },
+         description: 'O casal Silva e Garcia, de nacionalidades diferentes, buscava orientação jurídica para seu casamento internacional. Nossos advogados auxiliaram em todo o processo, garantindo que todos os requisitos legais fossem atendidos com sucesso.'},
         { id: 5, title: 'Adoção Concluída',
-         description: 'O casal Pereira finalmente concluiu o processo de adoção de seu filho após anos de espera e desafios legais. Nossa equipe ofereceu suporte jurídico durante todo o processo, tornando possível a realização desse sonho.',
-          image: '/src/assets/IMG/foguete.png' },
+         description: 'O casal Pereira finalmente concluiu o processo de adoção de seu filho após anos de espera e desafios legais. Nossa equipe ofereceu suporte jurídico durante todo o processo, tornando possível a realização desse sonho.'},
         { id: 6, title: 'Negociação Imobiliária',
-         description: 'O cliente Maria Alves enfrentava dificuldades em uma negociação imobiliária complexa. Com a assistência dos nossos advogados especializados, ela conseguiu chegar a um acordo vantajoso que atendeu às suas necessidades e objetivos.',
-          image: '/src/assets/IMG/foguete.png' }
+         description: 'O cliente Maria Alves enfrentava dificuldades em uma negociação imobiliária complexa. Com a assistência dos nossos advogados especializados, ela conseguiu chegar a um acordo vantajoso que atendeu às suas necessidades e objetivos.'}
       ]
     }
   }
