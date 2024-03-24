@@ -15,7 +15,7 @@
 
     <v-expand-transition mode="out-in" v-if="isMobile">
       <v-card v-show="expand" :class="{ 'no-margin': !expand }" class="headerMenu">
-        
+
         <v-btn @click="handleClick('#inicio')" style="margin-top:30px;" class="bnt-menu">Inicio</v-btn>
         <v-btn @click="handleClick('#sobre')" class="bnt-menu">Sobre Nós</v-btn>
         <v-btn @click="handleClick('#casos')" class="bnt-menu">Casos de Sucesso</v-btn>
